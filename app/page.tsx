@@ -60,7 +60,7 @@ export default function Home() {
       return;
     }
 
-    const newShortUrl = `${window.location.origin}/${shortCode}`;
+    const newShortUrl = `https://s.solve-labs.com/${shortCode}`;
     setShortUrl(newShortUrl);
     setIsLoading(false);
   };
