@@ -12,6 +12,7 @@ import { Copy, Check } from "lucide-react";
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const shortenUrl = process.env.SHORTEN_URL || "";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const schema = z.object({
@@ -60,7 +61,7 @@ export default function Home() {
       return;
     }
 
-    const newShortUrl = `https://s.solve-labs.com/${shortCode}`;
+    const newShortUrl = `${shortenUrl}${shortCode}`;
     setShortUrl(newShortUrl);
     setIsLoading(false);
   };
