@@ -1,40 +1,28 @@
 import { inputStyles } from '@/styles/input';
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    type?: 'text' | 'email' | 'password' | 'number' | 'url' | 'tel' | 'search';
-    placeholder?: string;
-    className?: string;
     error?: boolean;
-    disabled?: boolean;
-    register?: any;
     showClear?: boolean;
     onClear?: () => void;
 }
 
-export default function Input({
-    type = 'text',
-    placeholder,
+const Input = forwardRef<HTMLInputElement, InputProps>(({
     className = '',
     error = false,
-    disabled = false,
-    register,
     showClear = false,
     onClear,
-}: InputProps) {
-
+    ...props
+}, ref) => {
     const baseClasses = inputStyles.base;
-
     const computedClasses = `${baseClasses} ${className}`.trim();
 
     return (
         <div className="w-full relative">
             <input
-                type={type}
-                placeholder={placeholder}
                 className={computedClasses}
-                disabled={disabled}
-                {...register}
+                ref={ref}
+                {...props}
             />
             {showClear && (
                 <button
@@ -47,4 +35,7 @@ export default function Input({
             )}
         </div>
     );
-}
+});
+
+Input.displayName = "Input";
+export default Input;
