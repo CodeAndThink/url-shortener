@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --bg-cream: #FAF5EF;
+  --bg-cream: #F6F1E4;
   --bg-cream-dark: #F0EAE2;
   --text-primary: #1a1a1a;
   --text-secondary: #6b6560;
-  --accent-orange: #E8542C;
+  --accent-orange: #F94B1F;
   --accent-orange-hover: #D04420;
   --info-bg: #1a1a1a;
   --info-text: #e8e0d8;
@@ -39,9 +39,11 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-cream);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 3px;
@@ -110,15 +112,19 @@ input:focus {
   .hero-grid {
     grid-template-columns: 1fr !important;
   }
+
   .history-row {
     grid-template-columns: 1fr 1fr auto !important;
   }
+
   .history-row .original-url {
     display: none;
   }
+
   .page-header {
     padding: 16px 20px !important;
   }
+
   .page-main {
     padding: 16px 20px 64px !important;
   }
@@ -130,9 +136,11 @@ input:focus {
     gap: 12px !important;
     align-items: flex-start !important;
   }
+
   .history-row {
     grid-template-columns: 1fr auto !important;
   }
+
   .history-row .history-date {
     display: none;
   }
