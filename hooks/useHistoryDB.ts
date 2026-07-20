@@ -102,20 +102,17 @@ export function useHistoryDB() {
       });
   }, []);
 
-  const addEntry = useCallback(
-    async (entry: Omit<HistoryEntry, "id">) => {
-      try {
-        const id = await addEntryToDB(entry);
-        const newEntry = { ...entry, id };
-        setEntries((prev) => [newEntry, ...prev]);
-        return id;
-      } catch (err) {
-        console.error("Failed to add entry:", err);
-        throw err;
-      }
-    },
-    []
-  );
+  const addEntry = useCallback(async (entry: Omit<HistoryEntry, "id">) => {
+    try {
+      const id = await addEntryToDB(entry);
+      const newEntry = { ...entry, id };
+      setEntries((prev) => [newEntry, ...prev]);
+      return id;
+    } catch (err) {
+      console.error("Failed to add entry:", err);
+      throw err;
+    }
+  }, []);
 
   const deleteEntry = useCallback(async (id: number) => {
     try {

@@ -14,5 +14,5 @@ export const buttonStyles = {
     flex h-12 w-[25vw] items-center justify-center gap-2 rounded-full px-5
     text-foreground bg-transparent transition-colors
     hover:bg-black/[.04] dark:hover:bg-white/[.08] sm:w-[158px]
-  `
+  `,
 };
