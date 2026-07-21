@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* Header */}
-      <header className={`page-header ${styles.header}`}>
+      <header className={styles.header}>
         <div className={styles.brandContainer}>
           <span className={styles.brandTitle}>shrt.io</span>
           <span className={styles.brandSubtitle}>URL Shortener</span>
@@ -90,9 +90,9 @@ export default function Home() {
       <Divider />
 
       {/* Main Content */}
-      <main className={`page-main ${styles.main}`}>
+      <main className={styles.main}>
         {/* Hero Section — 2 columns */}
-        <section className="hero-grid" style={{ marginBottom: "48px" }}>
+        <section className="hero-grid">
           {/* Left — Form */}
           <div
             className="hero-form-box"
@@ -120,9 +120,8 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`submit-btn ${styles.submitBtn} ${
-                  isLoading ? styles.submitBtnLoading : styles.submitBtnActive
-                }`}
+                className={`submit-btn ${styles.submitBtn} ${isLoading ? styles.submitBtnLoading : styles.submitBtnActive
+                  }`}
               >
                 {isLoading ? "Đang tạo…" : "Rút gọn →"}
               </button>
