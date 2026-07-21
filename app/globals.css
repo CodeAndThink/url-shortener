@@ -64,7 +64,7 @@ input:focus {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 28px;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -121,7 +121,7 @@ input:focus {
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 40px;
     margin-bottom: 30px;
   }
 
