@@ -7,6 +7,7 @@ import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
 import { useHistoryDB } from "@/hooks/useHistoryDB";
 import Divider from "@/components/Divider";
+import { formatDate } from "@/utils/date";
 import styles from "./page.module.css";
 
 // Initialize Supabase client
@@ -25,15 +26,6 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-function formatDate(isoString: string): string {
-  const d = new Date(isoString);
-  const day = String(d.getDate()).padStart(2, "0");
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const year = d.getFullYear();
-  const hours = String(d.getHours()).padStart(2, "0");
-  const minutes = String(d.getMinutes()).padStart(2, "0");
-  return `${day}/${month}/${year} ${hours}:${minutes}`;
-}
 
 export default function Home() {
   const {

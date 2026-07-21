@@ -71,7 +71,7 @@ input:focus {
 }
 
 .hero-form-box {
-  padding: 60px;
+  padding: 40px;
 }
 
 /* History row */
@@ -126,7 +126,7 @@ input:focus {
   }
 
   .hero-form-box {
-    padding: 40px !important;
+    padding: 20px !important;
   }
 
   .history-row {
